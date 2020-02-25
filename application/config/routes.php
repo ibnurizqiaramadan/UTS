@@ -53,9 +53,9 @@ $route['default_controller'] = 'C_wisuda';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['wisuda/insert'] = 'C_wisuda/insertUpdateWisuda';
-$route['wisuda/update'] = 'C_wisuda/insertUpdateWisuda';
-$route['wisuda/add'] = 'C_wisuda/add';
-$route['wisuda/edit'] = 'C_wisuda/edit';
-$route['wisuda/delete/(:any)'] = 'C_wisuda/delete/$1';
+$route['insert'] = 'C_wisuda/insertUpdateWisuda';
+$route['update'] = 'C_wisuda/insertUpdateWisuda';
+$route['add'] = 'C_wisuda/add';
+$route['edit'] = 'C_wisuda/edit';
+$route['delete/(:any)'] = 'C_wisuda/delete/$1';
 
