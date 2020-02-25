@@ -54,7 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['insert'] = 'C_wisuda/insertUpdateWisuda';
-$route['update'] = 'C_wisuda/insertUpdateWisuda';
+$route['update/(:any)'] = 'C_wisuda/insertUpdateWisuda';
 $route['add'] = 'C_wisuda/add';
 $route['edit'] = 'C_wisuda/edit';
 $route['delete/(:any)'] = 'C_wisuda/delete/$1';
