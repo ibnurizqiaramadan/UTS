@@ -15,10 +15,10 @@
             </div>
             <div class="form-group">
                 <label>No Telpon</label>
-                <input type="number" class="form-control" name="notelp" placeholder="Enter NIM" required>
+                <input type="number" class="form-control" name="notelp" placeholder="Enter No Telpon" required>
             </div>
             <div class="form-group">
-                <label>judul</label>
+                <label>Judul</label>
                 <input type="text" class="form-control" name="judul" placeholder="Enter Judul Skripsi" required>
             </div>
             <div class="form-group">
