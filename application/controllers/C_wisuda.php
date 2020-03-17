@@ -38,15 +38,32 @@ class C_wisuda extends CI_Controller
     }
 
     function insertUpdateWisuda(){
-        $action = $this->uri->segment('1');
-        echo $action;
-        if ($action == 'insert') {
-            $this->M_wisuda->insertUpdateWisuda();
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('nim', 'Nim', 'required');
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('alamat', 'No Telpon', 'required');
+        $this->form_validation->set_rules('judul', 'Judul', 'required');
+        $this->form_validation->set_rules('kode', 'Kode Pembimbing', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $data = array(
+                'title' => 'Add data Wisuda',
+                'content' => 'wisuda/add',
+            );
+            $this->load->view('wisuda/template', $data);
         } else {
-            $noreg = $this->input->post('no_reg');
-            $this->M_wisuda->insertUpdateWisuda($noreg);
+            $action = $this->uri->segment('1');
+            echo $action;
+            if ($action == 'insert') {
+                $this->M_wisuda->insertUpdateWisuda();
+            } else {
+                $noreg = $this->input->post('no_reg');
+                $this->M_wisuda->insertUpdateWisuda($noreg);
+            }
+            redirect(site_url());
         }
-        redirect(site_url());
     }
 
     function delete($id){
